@@ -7,8 +7,8 @@ from setuptools import setup, find_packages
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
-# with open('HISTORY.rst') as history_file:
-#     history = history_file.read()
+with open('HISTORY.rst') as history_file:
+    history = history_file.read()
 
 with open('requirements.txt') as requirements_file:
     requirements = requirements_file.readlines()
@@ -40,7 +40,7 @@ setup(
     packages=find_packages(include=['peewee_pymssql', 'peewee_pymssql.*']),
     setup_requires=setup_requirements,
     test_suite='tests',
-    tests_require=test_requirements,
+    tests_require=setup_requirements + test_requirements,
     url='https://github.com/crashfrog/peewee_pymssql',
     version='0.1.0',
     zip_safe=False,
